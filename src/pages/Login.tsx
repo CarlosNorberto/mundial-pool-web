@@ -44,7 +44,7 @@ export function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-orange-500 to-orange-700 grid grid-cols-1 md:grid-cols-[3fr_1fr] items-center justify-center px-0">
+        <div className="min-h-screen bg-linear-to-br from-orange-500 to-orange-700 grid grid-cols-1 md:grid-cols-[3fr_1fr] items-center justify-center px-4 md:px-0">
             <div className='hidden md:flex items-center justify-center w-full h-full bg-red-950 order-2'>
                 <img src={mundialLogo} alt="Mundial VCM" className="max-w-sm mx-auto mb-4" />
             </div>
