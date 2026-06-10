@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import type { Match, Prediction } from '../lib/types';
 import { formatKickoff, isMatchLocked } from '../lib/utils/match';
 import { PredictionForm } from './PredictionForm';
+import { Flag } from './Flag';
 
 type Props = {
     match: Match;
@@ -34,8 +35,10 @@ export function MatchCard({ match, prediction }: Props) {
 
             {/* Equipos + Resultado */}
             <div className="flex items-center justify-between">
-                <div className="flex-1 text-center">
-                    <p className="font-bold text-slate-800">{match.home_team}</p>
+                {/* Local */}
+                <div className="flex-1 flex flex-col items-center gap-2">
+                    <Flag team={match.home_team} size={40} />
+                    <p className="font-bold text-slate-800 text-sm text-center">{match.home_team}</p>
                 </div>
 
                 <div className="px-4">
@@ -50,8 +53,10 @@ export function MatchCard({ match, prediction }: Props) {
                     )}
                 </div>
 
-                <div className="flex-1 text-center">
-                    <p className="font-bold text-slate-800">{match.away_team}</p>
+                {/* Visitante */}
+                <div className="flex-1 flex flex-col items-center gap-2">
+                    <Flag team={match.away_team} size={40} />
+                    <p className="font-bold text-slate-800 text-sm text-center">{match.away_team}</p>
                 </div>
             </div>
 
@@ -106,7 +111,7 @@ export function MatchCard({ match, prediction }: Props) {
                     </Link>
                 ) : (
                     <span className="text-xs text-slate-400">
-                        👥 Pronósticos visibles al cerrar
+                        👥 Ver pronósticos (al cerrar el partido)
                     </span>
                 )}
 

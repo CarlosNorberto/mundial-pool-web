@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { forgotPasswordSchema, type ForgotPasswordInput } from '../lib/schemas';
 import { slugifyUsername } from '../lib/slug';
 import { FormInput } from '../components/FormInput';
+import  mundialLogo from '../assets/splash-icon.png';
 
 export function ForgotPassword() {
     const navigate = useNavigate();
@@ -54,8 +55,11 @@ export function ForgotPassword() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center px-4">
-            <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md">
+        <div className="min-h-screen bg-linear-to-br from-orange-500 to-orange-700 grid grid-cols-1 md:grid-cols-[3fr_1fr] items-center justify-center px-0">
+            <div className='hidden md:flex items-center justify-center w-full h-full bg-red-950 order-2'>
+                <img src={mundialLogo} alt="Mundial VCM" className="max-w-sm mx-auto mb-4" />
+            </div>
+            <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-auto">
                 <h1 className="text-3xl font-bold text-center text-slate-800 mb-2">
                     Recuperar contraseña
                 </h1>

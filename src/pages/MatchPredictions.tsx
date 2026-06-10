@@ -3,6 +3,7 @@ import { useMatch } from '../lib/queries/matches';
 import { useMatchPredictions } from '../lib/queries/predictions';
 import { useSessionStore } from '../lib/store/session';
 import { formatKickoff } from '../lib/utils/match';
+import { Flag } from '../components/Flag';
 
 export function MatchPredictions() {
     const { id } = useParams<{ id: string }>();
@@ -66,8 +67,9 @@ export function MatchPredictions() {
                 </p>
 
                 <div className="flex items-center justify-between">
-                    <div className="flex-1 text-center">
-                        <p className="font-bold text-slate-800 text-lg">{match.home_team}</p>
+                    <div className="flex-1 flex flex-col items-center gap-2">
+                        <Flag team={match.home_team} size={56} />
+                        <p className="font-bold text-slate-800 text-center">{match.home_team}</p>
                     </div>
 
                     <div className="px-4">
@@ -82,8 +84,9 @@ export function MatchPredictions() {
                         )}
                     </div>
 
-                    <div className="flex-1 text-center">
-                        <p className="font-bold text-slate-800 text-lg">{match.away_team}</p>
+                    <div className="flex-1 flex flex-col items-center gap-2">
+                        <Flag team={match.away_team} size={56} />
+                        <p className="font-bold text-slate-800 text-center">{match.away_team}</p>
                     </div>
                 </div>
 
@@ -157,8 +160,8 @@ export function MatchPredictions() {
                                 {showPoints && (
                                     <div
                                         className={`px-2 py-1 rounded font-bold text-xs ${item.points! > 0
-                                                ? 'bg-orange-100 text-orange-700'
-                                                : 'bg-slate-100 text-slate-600'
+                                            ? 'bg-orange-100 text-orange-700'
+                                            : 'bg-slate-100 text-slate-600'
                                             }`}
                                     >
                                         {item.points} pts

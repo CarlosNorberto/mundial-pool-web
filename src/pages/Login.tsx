@@ -7,6 +7,7 @@ import { loginSchema, type LoginInput } from '../lib/schemas';
 import { slugifyUsername } from '../lib/slug';
 import { translateAuthError } from '../lib/auth-errors';
 import { FormInput } from '../components/FormInput';
+import  mundialLogo from '../assets/splash-icon.png';
 
 export function Login() {
     const navigate = useNavigate();
@@ -43,9 +44,15 @@ export function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center px-4">
-            <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md">
-                <h1 className="text-3xl font-bold text-center text-slate-800 mb-2">Mundial VCM</h1>
+        <div className="min-h-screen bg-linear-to-br from-orange-500 to-orange-700 grid grid-cols-1 md:grid-cols-[3fr_1fr] items-center justify-center px-0">
+            <div className='hidden md:flex items-center justify-center w-full h-full bg-red-950 order-2'>
+                <img src={mundialLogo} alt="Mundial VCM" className="max-w-sm mx-auto mb-4" />
+            </div>
+            <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-auto">
+                <h1 className="text-3xl font-bold text-center text-slate-800 mb-2 flex flex-col items-center justify-center">
+                    <span>Mundial</span>
+                    <span>Versatil - C&amp;M</span>
+                </h1>
                 <p className="text-center text-slate-600 mb-6">Predice. Gana. Celebra.</p>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -72,7 +79,7 @@ export function Login() {
                     <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-md transition disabled:opacity-50"
+                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-md transition disabled:opacity-50 cursor-pointer"
                     >
                         {submitting ? 'Ingresando...' : 'Ingresar'}
                     </button>
