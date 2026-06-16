@@ -80,7 +80,7 @@ export function Leaderboard() {
                                         )}
                                     </div>
                                     <p className="text-xs text-slate-500 mt-0.5">
-                                        {entry.exact_matches} exactos · {entry.exact_predictions} aciertos
+                                        {entry.exact_matches} exactos · {entry.correct_predictions} aciertos
                                     </p>
                                 </div>
 
